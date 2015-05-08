@@ -11,37 +11,12 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
        
-       <bean id="productManager" class="com.spring.mvc.service.SimpleProductManager">
-         <property name="productos">
-            <list>
-                <ref bean="product1"/>
-                <ref bean="product2"/>
-                <ref bean="product3"/>
-            </list>
-         </property>
-       </bean>
-       
-       <bean id="product1" class="com.spring.mvc.domain.Producto">
-       	<property name="descrption" value="Lamp"></property>
-       	<property name="price" value="5.75"></property>
-       </bean>
-       
-       <bean id="product2" class="com.spring.mvc.domain.Producto">
-       	<property name="descrption" value="Table"></property>
-       	<property name="price" value="75.25"></property>
-       </bean>
-       
-       <bean id="product3" class="com.spring.mvc.domain.Producto">
-       	<property name="descrption" value="Chair"></property>
-       	<property name="price" value="22.79"></property>
-       </bean>
-       
        <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
        	<property name="basename" value="messages" />
        </bean>
        
        <!-- Scans the classpath of this application for @Components to deploy as beans -->
-       <context:component-scan base-package="com.springs.mvc.web" />
+       <context:component-scan base-package="com.spring.mvc.web" />
 
        <!-- Configures the @Controller programming model -->
        <mvc:annotation-driven/>

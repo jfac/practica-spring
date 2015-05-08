@@ -14,29 +14,24 @@ import com.spring.mvc.domain.Producto;
 public class JPAProductoDAO implements ProductDAO {
 
 	private EntityManager em = null;
-	
-	/**
-	 * Set the entity manager
-	 * @param em
-	 */
-	@PersistenceContext
-	public void setEntityManager(EntityManager em){
-		this.em = em;
-	}
-	
-	
-	/**
-	 * @return list
-	 */
-	@Transactional(readOnly = true)
-	@SuppressWarnings("unchecked")
-	public List<Producto> getProductoList() {
-		return em.createQuery("select p from Product p order by p.id").getResultList();
-	}
 
-	@Transactional(readOnly = false)
-	public void saveProduct(Producto prod) {
-		em.merge(prod);
-	}
+    /*
+     * Sets the entity manager.
+     */
+    @PersistenceContext
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
+
+    @Transactional(readOnly = true)
+    @SuppressWarnings("unchecked")
+    public List<Producto> getProductList() {
+        return em.createQuery("select p from Producto p order by p.id").getResultList();
+    }
+
+    @Transactional(readOnly = false)
+    public void saveProduct(Producto prod) {
+        em.merge(prod);
+    }
 
 }

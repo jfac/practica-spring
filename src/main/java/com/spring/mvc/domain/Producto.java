@@ -21,7 +21,10 @@ public class Producto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
+	@Column(name = "description")
 	private String descrption;
+	
+	@Column(name = "price")
 	private Double price;
 	
 	public Integer getId() {
@@ -42,7 +45,7 @@ public class Producto implements Serializable{
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	@Override
+
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("descrption: ").append(descrption).append(";");
