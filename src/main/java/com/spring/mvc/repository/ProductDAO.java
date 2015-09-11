@@ -6,7 +6,7 @@ import com.spring.mvc.domain.Producto;
 
 public interface ProductDAO {
 	
-	public List<Producto> getProductList();
+    public List<Producto> getProductList();
 
     public void saveProduct(Producto prod);
 }
