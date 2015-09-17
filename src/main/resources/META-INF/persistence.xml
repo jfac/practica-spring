@@ -8,6 +8,7 @@
 	<persistence-unit name="springappPU" transaction-type="RESOURCE_LOCAL">
             <provider>org.hibernate.ejb.HibernatePersistence</provider>
             <jta-data-source>java:jboss/springappPU</jta-data-source>
+            <class>com.spring.mvc.domain.Producto</class>
 	</persistence-unit>
 
 </persistence>
